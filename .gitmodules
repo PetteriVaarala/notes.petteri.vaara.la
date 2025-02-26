@@ -1,0 +1,3 @@
+[submodule "starlight/src/content/docs/Notes"]
+	path = starlight/src/content/docs/Notes
+	url = git@github.com:PetteriVaarala/Notes.git
