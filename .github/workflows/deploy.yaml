@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          submodules: true
+          ssh-key: ${{ secrets.SSH_KEY }}
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
