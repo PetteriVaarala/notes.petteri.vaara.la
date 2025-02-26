@@ -4,8 +4,7 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://petterivaarala.github.io',
-	base: 'notes.petteri.vaara.la',
+	site: 'https://notes.petteri.vaara.la',
 	integrations: [
 		starlight({
 			title: 'notes.petteri.vaara.la',
