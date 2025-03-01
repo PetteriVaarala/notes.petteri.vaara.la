@@ -18,9 +18,6 @@ export default defineConfig({
 					autogenerate: { directory: 'Notes' },
 				},
 			],
-			components: {
-				PageTitle: './src/components/PageTitle.astro',
-			},
 		}),
 	],
 });
