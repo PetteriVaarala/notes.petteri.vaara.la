@@ -8,9 +8,9 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'notes.petteri.vaara.la',
-			social: {
-				github: 'https://github.com/PetteriVaarala/Notes',
-			},
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/PetteriVaarala/Notes' },
+			],
 			sidebar: [
 				{
 					label: 'Notes',
