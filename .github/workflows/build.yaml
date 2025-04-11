@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          ssh-key: ${{ secrets.SSH_KEY }}
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
+        with:
+          path: ./starlight
+          node-version: 23
+          package-manager: pnpm@10
