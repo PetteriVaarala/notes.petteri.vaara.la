@@ -4,7 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches: [ main ]
-
+    paths-ignore:
+      - '.github/**'
+      - 'README.md'
 permissions:
   contents: read
   pages: write
