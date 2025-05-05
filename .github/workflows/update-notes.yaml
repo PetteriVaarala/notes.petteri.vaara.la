@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '0 0 * * *' # Runs daily at midnight
 
+# Add permissions to allow checkout and git push
+permissions:
+  contents: write
+
 jobs:
   update-submodule:
     runs-on: ubuntu-latest
