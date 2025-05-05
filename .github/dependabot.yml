@@ -9,3 +9,11 @@ updates:
     directory: "/starlight"
     schedule:
       interval: "weekly"
+      day: "tuesday"
+    groups:
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+        patterns:
+          - "*"
