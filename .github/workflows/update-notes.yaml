@@ -24,7 +24,12 @@ jobs:
         run: |
           git config --global user.email "github.actions@vaara.la"
           git config --global user.name "GitHub Actions"
-          git submodule update --remote --merge
+          echo "git submodule"
+          git submodule
+          echo "git submodule sync --recursive"
+          git submodule sync --recursive
+          echo "git submodule update --remote"
+          git submodule update --remote
           git add .
           git commit -m "Update Notes to $(date -u +"%Y-%m-%d")" || echo "No changes to commit"
 
