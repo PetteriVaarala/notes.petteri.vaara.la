@@ -1,3 +1,26 @@
 [tools]
 node = "23.9.0"
 pnpm = "10.5.1"
+
+[tasks.init]
+run = "pnpm install"
+description = "Install dependencies"
+dir = "starlight"
+
+[tasks.dev]
+run = "pnpm dev"
+description = "Start development server"
+dir = "starlight"
+depends = ["init"]
+
+[tasks.build]
+run = "pnpm build"
+description = "Build the site for production"
+dir = "starlight"
+depends = ["init"]
+
+[tasks.preview]
+run = "pnpm preview"
+description = "Preview the production build locally"
+dir = "starlight"
+depends = ["build"]
