@@ -14,8 +14,7 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Notes',
-					// Autogenerate a group of links for the 'constellations' directory.
-					autogenerate: { directory: 'Notes' },
+					items: [{ autogenerate: { directory: 'Notes' } }],
 				},
 			],
 		}),

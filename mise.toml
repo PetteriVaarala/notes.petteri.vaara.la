@@ -1,6 +1,6 @@
 [tools]
-node = "23.9.0"
-pnpm = "10.5.1"
+node = "26.1.0"
+pnpm = "11.1.1"
 
 [tasks.init]
 run = "pnpm install"
@@ -15,7 +15,25 @@ depends = ["init"]
 
 [tasks.build]
 run = "pnpm build"
-description = "Build the site for production"
+description = "Build the project for production"
+dir = "starlight"
+depends = ["init"]
+
+[tasks.start]
+run = "pnpm start"
+description = "Start the production server"
+dir = "starlight"
+depends = ["init"]
+
+[tasks.lint]
+run = "pnpm astro check"
+description = "Run the linter to check code quality"
+dir = "starlight"
+depends = ["init"]
+
+[tasks.test]
+run = "pnpm test"
+description = "Run the test suite"
 dir = "starlight"
 depends = ["init"]
 
@@ -23,4 +41,27 @@ depends = ["init"]
 run = "pnpm preview"
 description = "Preview the production build locally"
 dir = "starlight"
-depends = ["build"]
+depends = ["init"]
+
+[tasks.format]
+run = "pnpm exec prettier --write ."
+description = "Format code according to style guidelines"
+dir = "starlight"
+depends = ["init"]
+
+[tasks.clean]
+run = "pnpm clean"
+dir = "starlight"
+description = "Clean build artifacts and cache"
+
+[tasks.update-minor]
+run = "pnpm update --interactive"
+description = "Update dependencies to newest minor version"
+dir = "starlight"
+depends = ["init"]
+
+[tasks.update-latest]
+run = "pnpm update --interactive --latest"
+description = "Update dependencies to newest latest version"
+dir = "starlight"
+depends = ["init"]
